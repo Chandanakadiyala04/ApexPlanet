@@ -1,0 +1,104 @@
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* =====================
+   GRID LAYOUT
+===================== */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "nav aside"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+header {
+  grid-area: header;
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #ddd;
+  padding: 10px;
+}
+
+main {
+  grid-area: main;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #bbb;
+  padding: 10px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #aaa;
+  padding: 10px;
+  text-align: center;
+}
+
+/* =====================
+   RESPONSIVE DESIGN
+===================== */
+@media (max-width: 600px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================
+   TO-DO LIST STYLING
+===================== */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+li button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: red;
+} 

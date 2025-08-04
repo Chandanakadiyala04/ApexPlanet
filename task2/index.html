@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intermediate HTML, CSS & JS Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Page Layout Container -->
+  <div class="container">
+    <header>
+      <h1>My Webpage</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#contactForm">Contact</a></li>
+        <li><a href="#todo">To-Do</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Contact Form Section -->
+      <section id="contactFormSection">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <!-- To-Do List Section -->
+      <section id="todo">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Add a task" />
+        <button id="addTaskButton">Add</button>
+        <ul id="taskList"></ul>
+      </section>
+    </main>
+
+    <aside>
+      <h3>Sidebar</h3>
+      <p>Additional info or links here.</p>
+    </aside>
+
+    <footer>
+      <p>&copy; 2025 My Webpage. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
