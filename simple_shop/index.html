@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Simple Shop</h1>
+    <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+  </header>
+
+  <main id="productList"></main>
+
+  <div id="cartModal" class="hidden">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button id="closeCart">Close</button>
+  </div>
+</body>
+</html>
