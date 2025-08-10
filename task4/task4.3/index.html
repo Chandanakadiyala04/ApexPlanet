@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Listing</title>
+<style>
+  body { font-family: Arial; margin: 20px; }
+  .product { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+</style>
+</head>
+<body>
+
+<h1>Products</h1>
+
+<label>Category:
+  <select id="categoryFilter" onchange="renderProducts()">
+    <option value="all">All</option>
+    <option value="electronics">Electronics</option>
+    <option value="clothing">Clothing</option>
+  </select>
+</label>
+
+<label>Sort by:
+  <select id="sortOption" onchange="renderProducts()">
+    <option value="default">Default</option>
+    <option value="priceLow">Price: Low to High</option>
+    <option value="priceHigh">Price: High to Low</option>
+    <option value="rating">Rating</option>
+  </select>
+</label>
+
+<div id="productList"></div>
+
+<script>
+const products = [
+  { name: "Laptop", category: "electronics", price: 50000, rating: 4.5 },
+  { name: "T-Shirt", category: "clothing", price: 500, rating: 4.0 },
+  { name: "Smartphone", category: "electronics", price: 20000, rating: 4.7 },
+  { name: "Jeans", category: "clothing", price: 1500, rating: 4.2 }
+];
+
+function renderProducts() {
+  let category = document.getElementById("categoryFilter").value;
+  let sort = document.getElementById("sortOption").value;
+  
+  let filtered = products.filter(p => category === "all" || p.category === category);
+  
+  if (sort === "priceLow") filtered.sort((a,b) => a.price - b.price);
+  if (sort === "priceHigh") filtered.sort((a,b) => b.price - a.price);
+  if (sort === "rating") filtered.sort((a,b) => b.rating - a.rating);
+  
+  document.getElementById("productList").innerHTML = filtered.map(p =>
+    `<div class="product">
+      <h3>${p.name}</h3>
+      <p>Category: ${p.category}</p>
+      <p>Price: ₹${p.price}</p>
+      <p>Rating: ${p.rating}</p>
+    </div>`
+  ).join("");
+}
+
+renderProducts();
+</script>
+
+</body>
+</html>
